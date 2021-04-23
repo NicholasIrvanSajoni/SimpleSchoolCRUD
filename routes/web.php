@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestApiController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/testapi/students', [TestApiController::class, 'getStudents']);
-Route::get('/testapi/students/create', [TestApiController::class, 'createStudent']);
-Route::get('/testapi/students/update', [TestApiController::class, 'updateStudent']);
-Route::get('/testapi/students/delete', [TestApiController::class, 'deleteStudent']);
+Route::get('/', [StudentController::class, 'index']);
+Route::get('/createdata', [StudentController::class, 'create']);
+Route::post('/poststudent', [StudentController::class, 'store']);
