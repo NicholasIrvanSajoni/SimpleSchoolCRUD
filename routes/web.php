@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\StudentController;
+use App\http\Controllers\TeacherController;
 use App\Http\Controllers\TestApiController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +22,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [StudentController::class, 'index']);
-Route::get('/createdata', [StudentController::class, 'create']);
-Route::post('/poststudent', [StudentController::class, 'store']);
+Route::get('/students', [StudentController::class, 'student_view']);
+Route::get('/teachers', [TeacherController::class, 'teacher_view']);
+Route::get('/classrooms', [ClassroomController::class, 'classroom_view']);
