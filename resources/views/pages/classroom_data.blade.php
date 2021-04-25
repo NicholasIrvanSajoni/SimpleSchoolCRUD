@@ -9,6 +9,9 @@
     $('#classroomtable').DataTable();
 } );
     </script>
+    <div class="text-center" style="width: 50%">
+        <a class="btn btn-success" href="/classrooms/createclassroom" title="Create New Classroom"> <i class="fas fa-plus-circle"></i></a>
+    </div>
 <table id="classroomtable" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>

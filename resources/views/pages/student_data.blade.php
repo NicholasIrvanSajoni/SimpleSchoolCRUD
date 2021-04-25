@@ -9,9 +9,8 @@
     $('#studenttable').DataTable();
 } );
     </script>
-<div class="pull-right" style="width: 250px;">
-    <a class="btn btn-success" href="/students/createstudent" title="Create New Student"> <i class="fas fa-plus-circle"></i>
-        </a>
+<div class="text-center" style="width: 50%">
+    <a class="btn btn-success" href="/students/createstudent" title="Create New Student"> <i class="fas fa-plus-circle"></i></a>
 </div>
 <table id="studenttable" class="table table-striped table-bordered" style="width:100%">
     <thead>
