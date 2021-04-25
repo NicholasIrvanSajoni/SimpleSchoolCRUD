@@ -23,10 +23,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StudentController::class, 'index']);
 Route::get('/students', [StudentController::class, 'student_view']);
-Route::get('/teachers', [TeacherController::class, 'teacher_view']);
 Route::get('/classrooms', [ClassroomController::class, 'classroom_view']);
 Route::get('/students/createstudent',[StudentController::class, 'create_student_view']);
 Route::post('/students/createstudent/create',[StudentController::class, 'create_student_post']);
 Route::get('/students/editstudent/{id}',[StudentController::class, 'edit_student_view']);
 Route::post('/students/editstudent/edit/{id}', [StudentController::class, 'edit_student_post']);
 Route::get('/students/deletestudent/{id}', [StudentController::class, 'delete_student']);
+
+Route::get('/teachers', [TeacherController::class, 'teacher_view']);
+Route::get('/createdataview', [TeacherController::class, 'create_teacher_view']);
+Route::post('/createdata', [TeacherController::class, 'create_teacher']);
+Route::get('/teachers/edit/view/{id}', [TeacherController::class, 'edit_teacher_view']);
+Route::post('/teachers/edit/edit/{id}', [TeacherController::class, 'edit_teacher']);
+Route::get('/teachers/delete/{id}', [TeacherController::class, 'delete_teacher']);
