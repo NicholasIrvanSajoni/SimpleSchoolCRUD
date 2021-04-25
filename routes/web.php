@@ -37,5 +37,8 @@ Route::post('/teachers/edit/edit/{id}', [TeacherController::class, 'edit_teacher
 Route::get('/teachers/delete/{id}', [TeacherController::class, 'delete_teacher']);
 
 Route::get('/classrooms', [ClassroomController::class, 'classroom_view']);
-Route::get('/classrooms/createclassroom',[ClassroomController::class, 'create_classoom_view']);
-Route::get('/classrooms/createclassroom/create',[ClassroomController::class, 'create_classoom_post']);
+Route::get('/classrooms/createclassroom',[ClassroomController::class, 'create_classroom_view']);
+Route::post('/classrooms/createclassroom/create',[ClassroomController::class, 'create_classroom_post']);
+Route::get('classrooms/editclassroom/{id}',[ClassroomController::class, 'edit_classroom_view']);
+Route::post('classrooms/editclassroom/edit/{id}', [ClassroomController::class, 'edit_classroom_post']);
+Route::get('classrooms/deleteclassroom/{id}', [ClassroomController::class, 'delete_classroom']);
