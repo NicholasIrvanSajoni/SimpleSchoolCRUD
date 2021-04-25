@@ -1,8 +1,36 @@
 @extends('pages/app')
 
-@section('title', 'MENGONTOL')
-
+@section('title', 'Student') 
+@yield('script')
 @section('content')
-
-<p>Wahai Senpai</p>
+<p class="text-center" style="font-size: 36px; padding-top:12px">Teacher List</p>
+<script>
+    $(document).ready(function() {
+    $('#teachertable').DataTable();
+} );
+    </script>
+<table id="teachertable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($teachers as $teacher)
+        <tr>
+            <td>{{ $teacher['id'] }}</td>
+            <td>{{ $teacher['name'] }}</td>
+            <td>{{ $teacher['age'] }}</td>
+        </tr>
+        @endforeach
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </tfoot>
+    </table>
 @endsection

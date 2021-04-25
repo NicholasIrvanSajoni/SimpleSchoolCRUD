@@ -12,13 +12,19 @@ class StudentController extends Controller
     {
         return Redirect::to('/students');
     }
-    public function student_view()
+    public function student_view(Request $request)
     { 
-        return view('pages/student_data');
+        $response = Http::get('http://127.0.0.1:3000/api/students');
+        return view('pages/student_data')
+        ->with('students', $response->json());
     }
 
-    // student view data list <-
-    // teacher view data list fak i lupa ubah satu"
+    public function create_student(Request $request)
+    {
+
+    }
+    // student view data list 
+    // teacher view data list 
     // classroom view data list
     // create student
     // create teacher
