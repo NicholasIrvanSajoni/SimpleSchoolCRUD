@@ -42,4 +42,6 @@
     </tfoot>
 </table>
 
+<a href="/createdataview" class="btn">Create</a>
+
 @endsection
