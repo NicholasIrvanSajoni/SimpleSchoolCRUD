@@ -4,6 +4,8 @@ use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\StudentController;
 use App\http\Controllers\TeacherController;
 use App\Http\Controllers\TestApiController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +44,13 @@ Route::post('/classrooms/createclassroom/create',[ClassroomController::class, 'c
 Route::get('classrooms/editclassroom/{id}',[ClassroomController::class, 'edit_classroom_view']);
 Route::post('classrooms/editclassroom/edit/{id}', [ClassroomController::class, 'edit_classroom_post']);
 Route::get('classrooms/deleteclassroom/{id}', [ClassroomController::class, 'delete_classroom']);
+
+Route::get('/users', [UserController::class, 'user_view']);
+Route::get('/users/login', [UserController::class, 'user_login_view']);
+Route::post('/users/login/post', [UserController::class, 'user_login_post']);
+Route::get('/users/register',[UserController::class, 'user_register_view']);
+Route::post('/users/registeruser',[UserController::class, 'user_register_post']);
+Route::get('/users/edit',[UserController::class, 'user_edit_view']);
+Route::post('/users/edituser',[UserController::class, 'user_edit_post']);
+Route::get('/users/delete',[UserController::class, 'user_delete_view']);
+Route::post('/users/deleteuser',[UserController::class, 'user_delete_post']);
